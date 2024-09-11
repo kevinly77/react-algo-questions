@@ -1,4 +1,5 @@
 import "./App.css";
+import FirstComeFirstServeExample from "./questions/arrays-and-string-manipulation/first-come-first-serve";
 import MergeSortedArrayExample from "./questions/arrays-and-string-manipulation/merge-sorted-arrays";
 import ReverseStringInPlaceExamples from "./questions/arrays-and-string-manipulation/reverse-string-in-place";
 import ReverseWordsExample from "./questions/arrays-and-string-manipulation/reverse-words";
@@ -6,7 +7,7 @@ import ReverseWordsExample from "./questions/arrays-and-string-manipulation/reve
 function App() {
 	return (
 		<div>
-			<MergeSortedArrayExample />
+			<FirstComeFirstServeExample />
 		</div>
 	);
 }
