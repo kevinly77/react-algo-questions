@@ -4,9 +4,6 @@ export default function FirstComeFirstServeExample() {
 	const takeOutOrders = [1, 3, 5, 7, 9];
 	const dineInOrders = [2, 4, 6, 8, 10];
 	const servedOrders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	function removeFirstOrder(orders: number[]) {
-		return orders.slice(1, orders.length);
-	}
 
 	function isFirstComeFirstServe(
 		takeOutOrders: number[],
@@ -38,11 +35,18 @@ export default function FirstComeFirstServeExample() {
 		) {
 			return false;
 		}
+
 		return true;
 	}
 	return (
 		<div>
-			{isFirstComeFirstServe(takeOutOrders, dineInOrders, servedOrders)}
+			<h1>
+				{isFirstComeFirstServe(
+					takeOutOrders,
+					dineInOrders,
+					servedOrders,
+				).toString()}
+			</h1>
 		</div>
 	);
 }
