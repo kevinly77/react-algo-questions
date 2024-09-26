@@ -1,5 +1,6 @@
 import "./App.css";
 import MaxPotentialProfitExample from "./questions/greedy-algorithms/max-potential-profit";
+import ProductOfAllOtherNumbersExample from "./questions/greedy-algorithms/product-of-all-other-numbers";
 import CanWatchAllMoviesExample from "./questions/hashing-hashmaps/can-watch-all-movies";
 import PermutationPlaindroneExample from "./questions/hashing-hashmaps/permutation-palindrone";
 
@@ -7,7 +8,7 @@ import PermutationPlaindroneExample from "./questions/hashing-hashmaps/permutati
 function App() {
 	return (
 		<div>
-			<MaxPotentialProfitExample />
+			<ProductOfAllOtherNumbersExample />
 		</div>
 	);
 }
