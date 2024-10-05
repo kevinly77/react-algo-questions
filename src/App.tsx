@@ -1,16 +1,62 @@
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home";
+import ArraysAndStringManipulation from "./pages/arrays-and-string-manipulation";
 import MaxPotentialProfitExample from "./questions/greedy-algorithms/max-potential-profit";
 import ProductOfAllOtherNumbersExample from "./questions/greedy-algorithms/product-of-all-other-numbers";
-import CanWatchAllMoviesExample from "./questions/hashing-hashmaps/can-watch-all-movies";
-import PermutationPlaindroneExample from "./questions/hashing-hashmaps/permutation-palindrone";
 import BracketValidatorExample from "./questions/queues-and-stacks/bracket-validator";
+import GreedyAlgorithms from "./pages/greedy-algorithms";
+import QueuesAndStacks from "./pages/queues-and-stacks";
+import MergeSortedArrayExample from "./questions/arrays-and-string-manipulation/merge-sorted-arrays";
 
 //TODO separate things into pages and sections
 function App() {
+	function Layout() {
+		return (
+			<div>
+				<nav>
+					<ul>
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+					</ul>
+				</nav>
+				<Outlet />
+			</div>
+		);
+	}
 	return (
 		<div>
-
-			<BracketValidatorExample />
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="/arrays-and-string-manipulation">
+						<Route index element={<ArraysAndStringManipulation />} />
+						<Route
+							path="merge-sorted-arrays"
+							element={<MergeSortedArrayExample />}
+						/>
+					</Route>
+					<Route path="/greedy-algorithms">
+						<Route index element={<GreedyAlgorithms />} />
+						<Route
+							path="max-potential-profit"
+							element={<MaxPotentialProfitExample />}
+						/>
+						<Route
+							path="product-of-all-other-numbers"
+							element={<ProductOfAllOtherNumbersExample />}
+						/>
+					</Route>
+					<Route path="/queues-and-stacks">
+						<Route index element={<QueuesAndStacks />} />
+						<Route
+							path="bracket-validator"
+							element={<BracketValidatorExample />}
+						/>
+					</Route>
+				</Route>
+			</Routes>
 		</div>
 	);
 }
