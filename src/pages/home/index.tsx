@@ -9,6 +9,7 @@ export default function Home() {
 			</Link>
 			<Link to="/greedy-algorithms">Greedy algorithms</Link>
 			<Link to="/queues-and-stacks">Queues and stacks</Link>
+			<Link to="/sorting-searching">Sorting and searching</Link>
 		</div>
 	);
 }
