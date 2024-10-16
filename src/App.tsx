@@ -10,6 +10,7 @@ import QueuesAndStacks from "./pages/queues-and-stacks";
 import MergeSortedArrayExample from "./questions/arrays-and-string-manipulation/merge-sorted-arrays";
 import TopScoresExample from "./questions/sorting-searching/top-scores";
 import SortingAndSearching from "./pages/sorting-searching";
+import ParenthesisMatcherExample from "./questions/queues-and-stacks/parenthesis-matcher";
 
 //TODO separate things into pages and sections
 function App() {
@@ -55,6 +56,10 @@ function App() {
 						<Route
 							path="bracket-validator"
 							element={<BracketValidatorExample />}
+						/>
+						<Route
+							path="parenthesis-matcher"
+							element={<ParenthesisMatcherExample />}
 						/>
 					</Route>
 
