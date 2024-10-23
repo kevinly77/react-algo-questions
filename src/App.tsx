@@ -10,7 +10,8 @@ import QueuesAndStacks from "./pages/queues-and-stacks";
 import MergeSortedArrayExample from "./questions/arrays-and-string-manipulation/merge-sorted-arrays";
 import TopScoresExample from "./questions/sorting-searching/top-scores";
 import SortingAndSearching from "./pages/sorting-searching";
-import ParenthesisMatcherExample from "./questions/queues-and-stacks/parenthesis-matcher";
+import FindRotationPointExample from "./questions/sorting-searching/find-rotation-point";
+
 
 //TODO separate things into pages and sections
 function App() {
@@ -66,6 +67,10 @@ function App() {
 					<Route path="/sorting-searching">
 						<Route index element={<SortingAndSearching />} />
 						<Route path="top-scores" element={<TopScoresExample />} />
+						<Route
+							path="find-rotation-point"
+							element={<FindRotationPointExample />}
+						/>
 					</Route>
 				</Route>
 			</Routes>
