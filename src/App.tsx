@@ -12,6 +12,7 @@ import TopScoresExample from "./questions/sorting-searching/top-scores";
 import SortingAndSearching from "./pages/sorting-searching";
 import FindRotationPointExample from "./questions/sorting-searching/find-rotation-point";
 
+
 //TODO separate things into pages and sections
 function App() {
 	function Layout() {
@@ -56,6 +57,10 @@ function App() {
 						<Route
 							path="bracket-validator"
 							element={<BracketValidatorExample />}
+						/>
+						<Route
+							path="parenthesis-matcher"
+							element={<ParenthesisMatcherExample />}
 						/>
 					</Route>
 
