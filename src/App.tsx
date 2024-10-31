@@ -11,13 +11,22 @@ import MergeSortedArrayExample from "./questions/arrays-and-string-manipulation/
 import TopScoresExample from "./questions/sorting-searching/top-scores";
 import SortingAndSearching from "./pages/sorting-searching";
 import FindRotationPointExample from "./questions/sorting-searching/find-rotation-point";
+import ParenthesisMatcherExample from "./questions/queues-and-stacks/parenthesis-matcher";
 
-
+import * as stylex from "@stylexjs/stylex";
 //TODO separate things into pages and sections
+
+const styles = stylex.create({
+	test: {
+		backgroundColor: "pink",
+		height: "100%",
+		width: "100%",
+	},
+});
 function App() {
 	function Layout() {
 		return (
-			<div>
+			<div {...stylex.props(styles.test)}>
 				<nav>
 					<ul>
 						<li>
@@ -30,51 +39,49 @@ function App() {
 		);
 	}
 	return (
-		<div>
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route index element={<Home />} />
-					<Route path="/arrays-and-string-manipulation">
-						<Route index element={<ArraysAndStringManipulation />} />
-						<Route
-							path="merge-sorted-arrays"
-							element={<MergeSortedArrayExample />}
-						/>
-					</Route>
-					<Route path="/greedy-algorithms">
-						<Route index element={<GreedyAlgorithms />} />
-						<Route
-							path="max-potential-profit"
-							element={<MaxPotentialProfitExample />}
-						/>
-						<Route
-							path="product-of-all-other-numbers"
-							element={<ProductOfAllOtherNumbersExample />}
-						/>
-					</Route>
-					<Route path="/queues-and-stacks">
-						<Route index element={<QueuesAndStacks />} />
-						<Route
-							path="bracket-validator"
-							element={<BracketValidatorExample />}
-						/>
-						<Route
-							path="parenthesis-matcher"
-							element={<ParenthesisMatcherExample />}
-						/>
-					</Route>
-
-					<Route path="/sorting-searching">
-						<Route index element={<SortingAndSearching />} />
-						<Route path="top-scores" element={<TopScoresExample />} />
-						<Route
-							path="find-rotation-point"
-							element={<FindRotationPointExample />}
-						/>
-					</Route>
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				<Route index element={<Home />} />
+				<Route path="/arrays-and-string-manipulation">
+					<Route index element={<ArraysAndStringManipulation />} />
+					<Route
+						path="merge-sorted-arrays"
+						element={<MergeSortedArrayExample />}
+					/>
 				</Route>
-			</Routes>
-		</div>
+				<Route path="/greedy-algorithms">
+					<Route index element={<GreedyAlgorithms />} />
+					<Route
+						path="max-potential-profit"
+						element={<MaxPotentialProfitExample />}
+					/>
+					<Route
+						path="product-of-all-other-numbers"
+						element={<ProductOfAllOtherNumbersExample />}
+					/>
+				</Route>
+				<Route path="/queues-and-stacks">
+					<Route index element={<QueuesAndStacks />} />
+					<Route
+						path="bracket-validator"
+						element={<BracketValidatorExample />}
+					/>
+					<Route
+						path="parenthesis-matcher"
+						element={<ParenthesisMatcherExample />}
+					/>
+				</Route>
+
+				<Route path="/sorting-searching">
+					<Route index element={<SortingAndSearching />} />
+					<Route path="top-scores" element={<TopScoresExample />} />
+					<Route
+						path="find-rotation-point"
+						element={<FindRotationPointExample />}
+					/>
+				</Route>
+			</Route>
+		</Routes>
 	);
 }
 
