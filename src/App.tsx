@@ -17,23 +17,24 @@ import * as stylex from "@stylexjs/stylex";
 //TODO separate things into pages and sections
 
 const styles = stylex.create({
-	test: {
-		backgroundColor: "pink",
+	layout: {
+		display: "grid",
+		gridTemplateColumns: "200px 1fr",
 		height: "100%",
 		width: "100%",
+		backgroundColor: "var(--color-surface-a0)",
+		color: "white",
+	},
+
+	sidebar: {
+		backgroundColor: "var(--color-surface-a10)",
 	},
 });
 function App() {
 	function Layout() {
 		return (
-			<div {...stylex.props(styles.test)}>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-					</ul>
-				</nav>
+			<div {...stylex.props(styles.layout)}>
+				<div {...stylex.props(styles.sidebar)}>sidebar</div>
 				<Outlet />
 			</div>
 		);
