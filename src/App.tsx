@@ -14,12 +14,14 @@ import FindRotationPointExample from "./questions/sorting-searching/find-rotatio
 import ParenthesisMatcherExample from "./questions/queues-and-stacks/parenthesis-matcher";
 
 import * as stylex from "@stylexjs/stylex";
+import Sidebar from "./components/sidebar";
+import { useEffect, useState } from "react";
 //TODO separate things into pages and sections
 
 const styles = stylex.create({
 	layout: {
 		display: "grid",
-		gridTemplateColumns: "200px 1fr",
+		gridTemplateColumns: "300px 1fr",
 		height: "100%",
 		width: "100%",
 		backgroundColor: "var(--color-surface-a0)",
@@ -34,7 +36,7 @@ function App() {
 	function Layout() {
 		return (
 			<div {...stylex.props(styles.layout)}>
-				<div {...stylex.props(styles.sidebar)}>sidebar</div>
+				<Sidebar />
 				<Outlet />
 			</div>
 		);
