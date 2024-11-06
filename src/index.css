@@ -1,12 +1,49 @@
 @stylex stylesheet;
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;  
 }
 
-html, body, #root {
+html,
+body,
+#root {
     height: 100%;
-    
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+:root {
+    --border-radius: 0.5rem;
+
+    --hover-opacity: 0.8;
+    --transition-speed: 0.3s;
+    font-family: "Diact Gothic", sans-serif;
+    /** Dark theme primary colors */
+    --color-primary-a0: #245bff;
+    --color-primary-a10: #546bff;
+    --color-primary-a20: #737cff;
+    --color-primary-a30: #8b8eff;
+    --color-primary-a40: #a1a0ff;
+    --color-primary-a50: #b6b2ff;
+
+    /** Dark theme surface colors */
+    --color-surface-a0: #121212;
+    --color-surface-a10: #282828;
+    --color-surface-a20: #3f3f3f;
+    --color-surface-a30: #575757;
+    --color-surface-a40: #717171;
+    --color-surface-a50: #8b8b8b;
+
+    /** Dark theme mixed surface colors */
+    --color-surface-mixed-a0: #1a1926;
+    --color-surface-mixed-a10: #2f2e3a;
+    --color-surface-mixed-a20: #464450;
+    --color-surface-mixed-a30: #5d5c67;
+    --color-surface-mixed-a40: #76757e;
+    --color-surface-mixed-a50: #908f97;
+
+
 }
