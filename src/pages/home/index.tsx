@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as stylex from "@stylexjs/stylex";
-import { algorithmCategories } from "../../question-categories";
+import { algorithmCategories } from "../../data/question-categories";
 import CustomLink from "../../components/link";
 import { formatCategoryName } from "../../helpers/helpers";
+import { commonStyles } from "../../styles/commons";
+import { I_Question, questions } from "../../data/questions";
 
 const styles = stylex.create({
 	wrapper: {
 		width: "100%",
+		height: "100%",
 		//backgroundColor: "pink",
 		display: "flex",
 		justifyContent: "center",
@@ -19,22 +22,6 @@ const styles = stylex.create({
 		maxWidth: "1366px",
 		width: "100%",
 		//backgroundColor: "blue",
-	},
-
-	categoryCard: {
-		padding: "1rem",
-		borderRadius: "var(--border-radius)",
-		border: "1px solid transparent",
-		backgroundColor: "var(--color-surface-a10)",
-		width: "15rem",
-		height: "10rem",
-
-		textDecoration: "none",
-		color: "inherit",
-		":hover": {
-			border: "1px solid var(--color-primary-a10)",
-			transition: "var(--transition-speed)",
-		},
 	},
 
 	categoriesWrapper: {
@@ -49,19 +36,28 @@ const styles = stylex.create({
 	},
 });
 export default function Home() {
-	function categoryCard(category: string) {
+	function card(category: I_Question) {
 		return (
-			<CustomLink to={`/${category}`} {...stylex.props(styles.categoryCard)}>
-				<h3>{formatCategoryName(category)}</h3>
+			<CustomLink to={category.path} {...stylex.props(commonStyles.card)}>
+				<h3>{category.name}</h3>
 			</CustomLink>
 		);
 	}
 	return (
 		<div {...stylex.props(styles.wrapper)}>
 			<div {...stylex.props(styles.innerWrapper)}>
-				<h1>Categories</h1>
-				<div {...stylex.props(styles.categoriesWrapper)}>
-					{algorithmCategories.map((category) => categoryCard(category))}
+				{/* <div>
+					<h1>Categories</h1>
+					<div {...stylex.props(styles.categoriesWrapper)}>
+						{algorithmCategories.map((category) => card(category))}
+					</div>
+				</div> */}
+
+				<div>
+					<h1>Questions</h1>
+					<div {...stylex.props(styles.categoriesWrapper)}>
+						{questions.map((question) => card(question))}
+					</div>
 				</div>
 			</div>
 		</div>

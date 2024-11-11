@@ -18,9 +18,5 @@ export default function ProductOfAllOtherNumbersExample() {
 		return merged;
 	}
 
-	return (
-		<div>
-			{console.log(getProdutsOfAllOtherNumbers([1, 7, 3, 4]).toString())}
-		</div>
-	);
+	return <div>{getProdutsOfAllOtherNumbers([1, 7, 3, 4]).toString()}</div>;
 }

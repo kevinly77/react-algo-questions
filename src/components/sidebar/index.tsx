@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
-import { algorithmCategories } from "../../question-categories";
+import { algorithmCategories } from "../../data/question-categories";
 import { commonStyles } from "../../styles/commons";
 import CustomLink from "../link";
 import { formatCategoryName } from "../../helpers/helpers";

@@ -26,7 +26,7 @@ export default function ParenthesisMatcherExample() {
 	return (
 		<div>
 			<p>((example))</p>
-			{getClosingParenthesisIndex("(((example))", 0)}
+			{getClosingParenthesisIndex("(((example)))", 0)}
 		</div>
 	);
 }
