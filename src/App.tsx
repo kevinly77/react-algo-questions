@@ -10,15 +10,12 @@ import { questions } from "./data/questions";
 const styles = stylex.create({
 	layout: {
 		display: "grid",
-		gridTemplateColumns: "300px 1fr",
 		height: "100%",
 		width: "100%",
-		backgroundColor: "var(--color-surface-a0)",
+		gridTemplateColumns: "300px 1fr",
+		backgroundColor: "var(--color-surface-a20)",
 		color: "white",
-	},
-
-	sidebar: {
-		backgroundColor: "var(--color-surface-a10)",
+		overflow: "scroll",
 	},
 });
 function App() {

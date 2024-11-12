@@ -28,5 +28,7 @@ export default function MergeSortedArrayExample() {
 		}
 		return mergedArray;
 	}
-	return <div>{mergeSortedArrays(array1, array2)}</div>;
+	return (
+		<div style={{ height: "100%" }}>{mergeSortedArrays(array1, array2)}</div>
+	);
 }
