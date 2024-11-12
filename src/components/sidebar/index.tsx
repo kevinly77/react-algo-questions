@@ -9,14 +9,21 @@ const styles = stylex.create({
 	sidebar: {
 		backgroundColor: "var(--color-surface-a10)",
 		padding: "1rem",
-		display: "flex",
+
 		flexDirection: "column",
 		width: "100%",
-		gap: "1rem",
 	},
 
 	active: {
 		color: "var(--color-primary-a10)",
+	},
+
+	innerWrapper: {
+		position: "sticky",
+		top: "1rem",
+		display: "flex",
+		flexDirection: "column",
+		gap: "0.5rem",
 	},
 });
 export default function Sidebar() {
@@ -24,23 +31,25 @@ export default function Sidebar() {
 
 	return (
 		<div {...stylex.props(styles.sidebar)}>
-			<CustomLink
-				to={"/"}
-				active={activeUrl === "/"}
-				onClick={() => setActiveUrl("/")}
-			>
-				<h4>Home</h4>
-			</CustomLink>
-			{algorithmCategories.map((category) => (
+			<div {...stylex.props(styles.innerWrapper)}>
 				<CustomLink
-					to={`/${category}`}
-					key={category}
-					active={activeUrl === `/${category}`}
-					onClick={() => setActiveUrl(`/${category}`)}
+					to={"/"}
+					active={activeUrl === "/"}
+					onClick={() => setActiveUrl("/")}
 				>
-					<h4>{formatCategoryName(category)}</h4>
+					<h4>Home</h4>
 				</CustomLink>
-			))}
+				{algorithmCategories.map((category) => (
+					<CustomLink
+						to={`/${category}`}
+						key={category}
+						active={activeUrl === `/${category}`}
+						onClick={() => setActiveUrl(`/${category}`)}
+					>
+						<h4>{formatCategoryName(category)}</h4>
+					</CustomLink>
+				))}
+			</div>
 		</div>
 	);
 }
